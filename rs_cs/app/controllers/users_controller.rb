@@ -1,19 +1,27 @@
 class UsersController < ApplicationController
 
    def index
-        debugger
         @users = User.all
         render json: @users
    end 
 
    def create
-        @user = User.new(user_params)
-        @user.save!
-        render json: user
+        user = User.new(user_params)
+        if user.save
+            render json: user
+        else
+         render json: user.errors.full_messages, status: 422
+        end
+        
    end
 
    def show
-      render json: params
+      @user = User.find(params[:id])
+      render json: @user
+   end
+
+   def update
+      
    end
 
    private
