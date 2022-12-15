@@ -20,5 +20,3 @@ class Artwork < ApplicationRecord
 end
 
 
-
-
