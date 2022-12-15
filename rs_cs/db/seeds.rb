@@ -20,3 +20,9 @@ art4 = Artwork.create!(title: "white canvas 2", image_url: "12321", artist_id: a
 art5 = Artwork.create!(title: "sad boy", image_url: "12111", artist_id: tobie.id)
 art6 = Artwork.create!(title: "Girl with a pearl earring", image_url: "10000", artist_id: tobie.id)
 
+shared_art = ArtworkShare.create!(artwork_id: art1.id, viewer_id: tobie.id)
+shared_art2 = ArtworkShare.create!(artwork_id: art2.id, viewer_id: vangogh.id)
+shared_art3 = ArtworkShare.create!(artwork_id: art2.id, viewer_id: arty.id)
+shared_art4 = ArtworkShare.create!(artwork_id: art3.id, viewer_id: vangogh.id)
+shared_art5 = ArtworkShare.create!(artwork_id: art6.id, viewer_id: vangogh.id)
+shared_art6 = ArtworkShare.create!(artwork_id: art4.id, viewer_id: tobie.id)
