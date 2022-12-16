@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
          
          render json: @user
-      #   redirect_to user_url(@user)
+      #   redirect_to user_url(@users)
       else
          
         render json: @user.errors.full_messages, status: 422
@@ -37,12 +37,11 @@ class UsersController < ApplicationController
    def destroy
       @user = User.find(params[:id])
       @user.destroy
-      redirect_to user_url
+      redirect_to users_url
    end
 
    private
    def user_params
-      
       params.require(:user).permit(:username)
    end
 
